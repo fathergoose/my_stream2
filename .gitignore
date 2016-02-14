@@ -1,0 +1,5 @@
+myTunes/node_modules
+myTunes/.tmp
+myTunes/.sass-cache
+myTunes/bower_components
+*mp3
