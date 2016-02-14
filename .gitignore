@@ -1,3 +1,9 @@
+# Ignore all logfiles and tempfiles.
+/log/*
+!/log/.keep
+/tmp
+
+# Ignore client side packages
 myTunes/node_modules
 myTunes/.tmp
 myTunes/.sass-cache
