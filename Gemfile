@@ -12,6 +12,10 @@ gem 'pg'
 
 gem 'rspec-rails', :group => :test
 
+gem 'carrierwave'
+
+gem 'ruby-audioinfo'
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

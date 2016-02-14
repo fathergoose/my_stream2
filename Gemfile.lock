@@ -36,11 +36,20 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
+    apetag (1.1.5)
+      cicphash (>= 1.0.0)
     arel (6.0.3)
     builder (3.2.2)
+    carrierwave (0.10.0)
+      activemodel (>= 3.2.0)
+      activesupport (>= 3.2.0)
+      json (>= 1.7)
+      mime-types (>= 1.16)
+    cicphash (1.1.0)
     concurrent-ruby (1.0.0)
     diff-lcs (1.2.5)
     erubis (2.7.0)
+    flacinfo-rb (1.0)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
     i18n (0.7.0)
@@ -52,6 +61,8 @@ GEM
     mime-types (2.99)
     mini_portile2 (2.0.0)
     minitest (5.8.4)
+    moumar-wmainfo-rb (0.8)
+    mp4info (1.7.3)
     nokogiri (1.6.7.2)
       mini_portile2 (~> 2.0.0.rc2)
     pg (0.18.4)
@@ -103,6 +114,16 @@ GEM
       rspec-mocks (~> 3.4.0)
       rspec-support (~> 3.4.0)
     rspec-support (3.4.1)
+    ruby-audioinfo (0.5.2)
+      apetag (>= 1.1.4)
+      flacinfo-rb (>= 0.4)
+      moumar-wmainfo-rb (>= 0.7)
+      mp4info (>= 1.7.3)
+      ruby-mp3info (>= 0.8)
+      ruby-ogginfo (>= 0.7)
+      wavefile (>= 0.6.0)
+    ruby-mp3info (0.8.9)
+    ruby-ogginfo (0.7.2)
     spring (1.6.3)
     sprockets (3.5.2)
       concurrent-ruby (~> 1.0)
@@ -115,15 +136,18 @@ GEM
     thread_safe (0.3.5)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
+    wavefile (0.6.0)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
+  carrierwave
   pg
   rails (= 4.2.5.1)
   rails-api
   rspec-rails
+  ruby-audioinfo
   spring
 
 BUNDLED WITH
