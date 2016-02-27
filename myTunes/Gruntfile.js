@@ -1,4 +1,4 @@
-// Generated on 2016-02-14 using generator-angular 0.15.1
+// Generated on 2016-02-07 using generator-angular 0.15.1
 'use strict';
 
 // # Globbing
@@ -75,11 +75,27 @@ module.exports = function (grunt) {
         hostname: 'localhost',
         livereload: 35729
       },
+      proxies: [
+        {
+          context: '/api',
+          host: 'localhost',
+          port: 3000
+        }
+      ],
       livereload: {
         options: {
           open: true,
-          middleware: function (connect) {
-            return [
+          base: [
+            '.tmp',
+            '<%= yeoman.app %>'
+          ],
+          middleware: function (connect, options) {
+            if (!Array.isArray(options.base)) {
+              options.base = [options.base];
+            }
+
+            // setup the proxy
+            var middlewares = [
               connect.static('.tmp'),
               connect().use(
                 '/bower_components',
@@ -89,8 +105,20 @@ module.exports = function (grunt) {
                 '/app/styles',
                 connect.static('./app/styles')
               ),
-              connect.static(appConfig.app)
+              connect.static(appConfig.app),
+              require('grunt-connect-proxy/lib/utils').proxyRequest
             ];
+
+            // Serve static files.
+            options.base.forEach(function(base) {
+              middlewares.push(connect.static(base));
+            });
+
+            // Make directory browse-able.
+            var directory = options.directory || options.base[options.base.length - 1];
+            middlewares.push(connect.directory(directory));
+
+            return middlewares;
           }
         }
       },
@@ -224,7 +252,7 @@ module.exports = function (grunt) {
         src: ['<%= yeoman.app %>/styles/{,*/}*.{scss,sass}'],
         ignorePath: /(\.\.\/){1,2}bower_components\//
       }
-    }, 
+    },
 
     // Compiles Sass to CSS and generates necessary files if requested
     compass: {
@@ -371,7 +399,7 @@ module.exports = function (grunt) {
     ngtemplates: {
       dist: {
         options: {
-          module: 'myTunesApp',
+          module: 'jmlApiApp',
           htmlmin: '<%= htmlmin.dist.options %>',
           usemin: 'scripts/scripts.js'
         },
@@ -459,6 +487,8 @@ module.exports = function (grunt) {
     }
   });
 
+  grunt.loadNpmTasks('grunt-connect-proxy');
+
 
   grunt.registerTask('serve', 'Compile then start a connect web server', function (target) {
     if (target === 'dist') {
@@ -470,6 +500,7 @@ module.exports = function (grunt) {
       'wiredep',
       'concurrent:server',
       'postcss:server',
+      'configureProxies:server',
       'connect:livereload',
       'watch'
     ]);
@@ -513,4 +544,5 @@ module.exports = function (grunt) {
     'test',
     'build'
   ]);
+
 };
