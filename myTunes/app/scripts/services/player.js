@@ -34,6 +34,10 @@ angular.module('myTunesApp')
         audio.play();
         player.playing = true;
         paused = false;
+      },
+
+      pause: function() {
+        audio.pause();
       }
     };
 
