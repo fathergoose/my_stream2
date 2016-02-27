@@ -12,7 +12,7 @@ angular.module('myTunesApp')
     // Service logic
     // ...
 
-    var audio = $document[0].createElement('audio');
+    var audio = AV.Player.fromURL('/audio/intro.flac');
 
     // Public API here
     return audio;
