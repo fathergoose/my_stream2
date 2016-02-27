@@ -9,3 +9,6 @@ myTunes/.tmp
 myTunes/.sass-cache
 myTunes/bower_components
 myTunes/app/audio/*
+
+# Ignore /public becaus it is just for building into
+/public
