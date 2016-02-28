@@ -2,13 +2,13 @@
 
 /**
  * @ngdoc function
- * @name myTunesApp.controller:AboutCtrl
+ * @name myTunesApp.controller:UploadCtrl
  * @description
- * # AboutCtrl
+ * # UploadCtrl
  * Controller of the myTunesApp
  */
 angular.module('myTunesApp')
-  .controller('AboutCtrl', function () {
+  .controller('UploadCtrl', function () {
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
