@@ -39,8 +39,7 @@
 
             <ul class="nav navbar-nav">
               <li class="active"><a href="#/">Home</a></li>
-              <li><a ng-href="#/about">About</a></li>
-              <li><a ng-href="#/">Contact</a></li>
+              <li><a ng-href="#/upload">Upload</a></li>
             </ul>
           </div>
         </div>
@@ -81,16 +80,18 @@
     <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
     <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower_components/angular-ui-uploader/dist/uploader.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
     <script src="bower_components/aurora/index.js"></script>
     <script src="bower_components/flac/index.js"></script>
     <script src="bower_components/mp3/index.js"></script>
-    <!-- endbower -->
-    <!-- endbuild -->
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="scripts/app.js"></script>
         <script src="scripts/controllers/main.js"></script>
-        <script src="scripts/controllers/about.js"></script>
+        <script src="scripts/controllers/upload.js"></script>
         <script src="scripts/services/player.js"></script>
         <script src="scripts/services/audio.js"></script>
         <script src="scripts/services/tracks.js"></script>

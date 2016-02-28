@@ -18,8 +18,10 @@ class TracksController < ApplicationController
   # POST /tracks
   # POST /tracks.json
   def create
-    @track = Track.new(track_params)
-
+    @track = Track.new
+    @track.audiofile = params[:file]
+    # @track = Track.new(track_params)
+    #
     if @track.save
       render json: @track, status: :created, location: @track
     else
@@ -54,6 +56,6 @@ class TracksController < ApplicationController
     end
 
     def track_params
-      params.require(:track).permit(:title, :artist_id, :album_id, :track_number, :quality_id, :path, :user_id)
+      params.require(:track).permit(:title, :artist_id, :album_id, :track_number, :quality_id, :audiofile, :user_id)
     end
 end

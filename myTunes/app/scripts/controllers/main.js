@@ -18,4 +18,5 @@ angular.module('myTunesApp')
     $scope.message = "hello";
     $scope.audio = audio;
     $scope.player = player;
+
   });
