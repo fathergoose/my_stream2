@@ -8,7 +8,7 @@
  * Controller of the myTunesApp
  */
 angular.module('myTunesApp')
-  .controller('MainCtrl', function (audio, player) {
+  .controller('MainCtrl', function (audio, player, $scope) {
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
