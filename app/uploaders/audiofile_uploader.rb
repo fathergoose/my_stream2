@@ -1,6 +1,19 @@
 # encoding: utf-8
 
 class AudiofileUploader < CarrierWave::Uploader::Base
+  # Things I have added
+  require 'audioinfo'
+
+  def tags
+    p '######'
+    p self
+    p '######'
+    AudioInfo.open(file.file) do |info|
+     p info.artist  
+     p info.album
+     p info.title
+    end 
+  end
 
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick

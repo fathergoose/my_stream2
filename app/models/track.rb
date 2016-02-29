@@ -7,7 +7,14 @@ class Track < ActiveRecord::Base
     audiofile.url
   end
 
-private
+  def tags
+    AudioInfo.open(audiofile.path) do |info|
+    end
+  end
+      
+
+# private
+
 
   def clean
     audiofile.remove!
