@@ -23,7 +23,8 @@ class TracksController < ApplicationController
 
     @track = Track.new
     @track.audiofile = params[:file]
-    @track.audiofile.tags
+    @track.set_tags
+    p @track
 
     if @track.save
       render json: @track, status: :created, location: @track
