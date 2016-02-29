@@ -12,7 +12,8 @@ class Track < ActiveRecord::Base
       update(
         artist: info.artist,
         album: info.album,
-        title: info.title
+        title: info.title,
+        track_number: info.tracknum
       )
     end
   end
