@@ -7,7 +7,20 @@ class Track < ActiveRecord::Base
     audiofile.url
   end
 
+  def set_tags
+    AudioInfo.open(path) do |info|
+      update(
+        artist: info.artist,
+        album: info.album,
+        title: info.title,
+        track_number: info.tracknum
+      )
+    end
+  end
+      
+
 private
+
 
   def clean
     audiofile.remove!
@@ -15,6 +28,10 @@ private
       "#{Rails.root}/public/uploads/track/audiofile/#{id}",
       force: true
     )
+  end
+
+  def path
+    audiofile.path
   end
 
 end

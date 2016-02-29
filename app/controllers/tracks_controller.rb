@@ -1,4 +1,5 @@
 class TracksController < ApplicationController
+  require 'audioinfo'
   before_action :set_track, only: [:show, :update, :destroy]
 
   # GET /tracks
@@ -18,10 +19,13 @@ class TracksController < ApplicationController
   # POST /tracks
   # POST /tracks.json
   def create
+    # @track = Track.new(track_params)
+
     @track = Track.new
     @track.audiofile = params[:file]
-    # @track = Track.new(track_params)
-    #
+    @track.set_tags
+    p @track
+
     if @track.save
       render json: @track, status: :created, location: @track
     else
