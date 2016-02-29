@@ -8,7 +8,7 @@
  * Controller of the myTunesApp
  */
 angular.module('myTunesApp')
-  .controller('MainCtrl', function (audio, player, $scope) {
+  .controller('MainCtrl', function (audio, player, tracks, $scope) {
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
@@ -18,5 +18,6 @@ angular.module('myTunesApp')
     $scope.message = "hello";
     $scope.audio = audio;
     $scope.player = player;
+    $scope.tracks = tracks.query();
 
   });
