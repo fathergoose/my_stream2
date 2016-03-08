@@ -1,6 +1,12 @@
 ## Introduction
 
-This application was built as two conceptually separate components:
+This project is inspired heavily by [ampache](https://github.com/ampache/ampache) and [subsonic](http://www.subsonic.org/pages/index.jsp). I have used them both, but IMHO found them to be bloated and difficult to use.
+
+It is intended to be modular, extensible, free and opensource in every possilbe way.
+
+## Architecture
+
+This application is built as two conceptually separate components:
 - A [rails-api](https://github.com/rails-api/rails-api) backend
 - A [yeoman-angular](https://github.com/yeoman/generator-angular) based frontend
 
@@ -9,8 +15,6 @@ This application is based heavily off the tutorial [How to Wire up Ruby on Rails
 Notable points of deviation from this article include:
 - `yo angular:factory <some_factory>` to generate our resource factories
 - Exclude puma from development environment or grunt-proxy pass will not work
-
-## So what's going on here?
 
 #### Development environment
 When working on the application locally, use grunt to serve the pages into your web browser with grunt server. Be sure to **run all grunt, bower, npm etc. commands inside `client/`**
@@ -47,3 +51,21 @@ grunt build --force
 ```
 will compile all of the relevant html, css, and js files from `client/app/` into `public/`. This means that any changes inside of the `client/` folder will not
 reflected in the deployed application unless `grunt build --force` is run and the changes are committed to git. This can be verified before pushing to heroku by attempting to browse the site locally using only the rails server.
+
+## Goals
+**Short Term:**
+*Useable (as a website)*
+- [ ] Fully tested track#create method
+- [ ] Player in angularJS
+- [ ] Configure S3/fog storage
+- [ ] Secure with ngTokenAuth and devsie
+**Meduim Term:**
+*Really cool(website)*
+- [ ] Music brainz and/or spotify data integration
+- [ ] Support for album art (linked)
+- [ ] Support for DIY album art (uploaded)
+**Long Term**
+*Totally Awesome (as standalone software)*
+- [ ] Move configuration options to a GUI
+- [ ] Automate/document installation (for admins, not devs)
+- [ ] Social elements / facebook integration
