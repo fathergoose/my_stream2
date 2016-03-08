@@ -59,11 +59,13 @@ reflected in the deployed application unless `grunt build --force` is run and th
 - [ ] Player in angularJS
 - [ ] Configure S3/fog storage
 - [ ] Secure with ngTokenAuth and devsie
+
 **Meduim Term:**
 *Really cool(website)*
 - [ ] Music brainz and/or spotify data integration
 - [ ] Support for album art (linked)
 - [ ] Support for DIY album art (uploaded)
+
 **Long Term**
 *Totally Awesome (as standalone software)*
 - [ ] Move configuration options to a GUI
