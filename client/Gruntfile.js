@@ -80,6 +80,11 @@ module.exports = function (grunt) {
           context: '/api',
           host: 'localhost',
           port: 3000
+        },
+        {
+          context: '/uploads/track',
+          host: 'localhost',
+          port: 3000
         }
       ],
       livereload: {
