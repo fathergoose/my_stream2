@@ -1,14 +1,18 @@
+    <script src="bower_components/aurora/index.js"></script>
+    <script src="bower_components/flac/index.js"></script>
+    <script src="bower_components/mp3/index.js"></script>
+
 # Ignore all logfiles and tempfiles.
 /log/*
 !/log/.keep
 /tmp
 
 # Ignore client side packages
-myTunes/node_modules
-myTunes/.tmp
-myTunes/.sass-cache
-myTunes/bower_components
-myTunes/app/audio/*
+client/node_modules
+client/.tmp
+client/.sass-cache
+client/bower_components
+client/app/audio/*
 
 # Ignore /public because it is just for building into
 /public
