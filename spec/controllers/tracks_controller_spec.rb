@@ -52,6 +52,21 @@ RSpec.describe TracksController, type: :controller do
     end
   end
 
+  describe "GET #new" do
+    it "assigns a new track as @track" do
+      get :new, {}, valid_session
+      expect(assigns(:track)).to be_a_new(Track)
+    end
+  end
+
+  describe "GET #edit" do
+    it "assigns the requested track as @track" do
+      track = Track.create! valid_attributes
+      get :edit, {:id => track.to_param}, valid_session
+      expect(assigns(:track)).to eq(track)
+    end
+  end
+
   describe "POST #create" do
     context "with valid params" do
       it "creates a new Track" do
