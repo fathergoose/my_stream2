@@ -4,9 +4,4 @@ Rails.application.routes.draw do
     resources :tracks, except: [:new, :edit]
   end
 
-  if Rails.env.development?
-    get '/music' => redirect('/uploads')
-  end
-
-
 end
