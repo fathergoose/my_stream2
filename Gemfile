@@ -7,16 +7,21 @@ gem 'rails-api'
 
 gem 'spring', :group => :development
 
-
 gem 'pg'
-
-gem 'rspec-rails', :group => :test
 
 gem 'carrierwave'
 
 gem 'ruby-audioinfo'
 
+group :development, :test do
+  gem 'rspec-rails'
+  gem 'factory_girl_rails'
+end
 
-
-
-
+group :test do
+  gem 'faker'
+  gem 'capybara'
+  gem 'database_cleaner'
+  gem 'launchy'
+  gem 'selenium-webdriver'
+end
