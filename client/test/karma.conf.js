@@ -33,6 +33,9 @@ module.exports = function(config) {
       'bower_components/angular-sanitize/angular-sanitize.js',
       'bower_components/angular-touch/angular-touch.js',
       'bower_components/angular-ui-uploader/dist/uploader.js',
+      'bower_components/aurora/index.js',
+      'bower_components/flac/index.js',
+      'bower_components/mp3/index.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
       "app/scripts/**/*.js",
