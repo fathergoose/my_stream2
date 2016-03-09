@@ -55,6 +55,7 @@ reflected in the deployed application unless `grunt build --force` is run and th
 ## Goals
 **Short Term:**
 *Useable (as a website)*
+- [ ] Make tracks playeable on front-end (development)
 - [ ] Fully tested track#create method
 - [ ] Player in angularJS
 - [ ] Configure S3/fog storage
