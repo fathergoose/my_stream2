@@ -82,7 +82,7 @@ module.exports = function (grunt) {
           port: 3000
         },
         {
-          context: '/music',
+          context: '/uploads/track',
           host: 'localhost',
           port: 3000
         }
