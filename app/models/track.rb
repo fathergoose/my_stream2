@@ -1,5 +1,7 @@
 class Track < ActiveRecord::Base
   mount_uploader :audiofile, AudiofileUploader
+  belongs_to :album
+  belongs_to :artist
 
   before_destroy :clean
 
